@@ -1,6 +1,8 @@
 module Yahoo
   module SE
     module Paginator
+      include Enumerable
+
       # The response object from the request
       def response
         raise "Must send a request before you can get a response. Run the results method first!" if @request.nil?
@@ -22,6 +24,13 @@ module Yahoo
         (@options[:start] + @options[:results]) >= response.total_results_available
       end
       
+      def each
+        return unless block_given?
+        begin
+          yield @request.nil? ? results : self.next
+        end while !last?
+      end
+
       def method_missing(method, *args)
         results
         response.send(method, *args)

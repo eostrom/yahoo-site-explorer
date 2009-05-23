@@ -10,10 +10,10 @@ describe Yahoo::SE do
     Yahoo::SE::SERVICE_PATH.should == "http://search.yahooapis.com/SiteExplorerService/V1"
   end
   
-  it "should return the results after a ResponseError was raised" do
-    Yahoo::SE.application_id = "123"
-    @url = "http://vielmetti.typepad.com/vacuum"
-    @results = Yahoo::SE.all(::Yahoo::SE.pages(@url, :results => 100))
-    @results.size.should > 0
-  end
+  # it "should return the results after a ResponseError was raised" do
+  #   Yahoo::SE.application_id = "123"
+  #   @url = "http://vielmetti.typepad.com/vacuum"
+  #   @results = Yahoo::SE.all(::Yahoo::SE.pages(@url, :results => 100))
+  #   @results.size.should > 0
+  # end
 end

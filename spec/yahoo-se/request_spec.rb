@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__), "..", "spec_helper")
 describe Yahoo::SE::Request do
   describe "hash_to_query" do
     it "should convert a hash to a query string" do
-      Yahoo::SE::Request.hash_to_query(:appid => "123", :query => "http://erbmicha.com", :results => 100).should == "appid=123&query=http://erbmicha.com&results=100"
+      Yahoo::SE::Request.hash_to_query(:appid => "123", :query => "http://erbmicha.com", :results => 100).should be_serialized_as("appid=123&query=http://erbmicha.com&results=100")
     end
   end
   

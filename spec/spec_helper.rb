@@ -7,6 +7,7 @@ require "rubygems"
 require "test/unit"
 require "spec"
 require File.join(File.dirname(__FILE__), "..", "lib", "yahoo-se")
+require File.join(File.dirname(__FILE__), "yahoo-se-matchers")
 
 
 Spec::Runner.configure do |config| 
