@@ -27,6 +27,16 @@ describe Yahoo::SE::Response do
     end
   end
 
+  describe "with one result" do
+    before do
+      @response = Yahoo::SE::Response.new(fixture("one_result.json"))
+    end
+
+    it "should list 1 result object" do
+      @response.results.size.should == 1
+    end
+  end
+
   describe "Errors" do
     it "should raise an exception if the response is a exceed error" do
       @response = Yahoo::SE::Response.new(fixture("exceed_error.json"))

@@ -18,7 +18,7 @@ module Yahoo
       # The result objects returned from the request
       def results
         unless errors
-          if total_results_available == 1
+          if total_results_returned == 1
             [Yahoo::SE::Result.new(self.to_json["ResultSet"]["Result"])]
           elsif total_results_available == 0
             []
