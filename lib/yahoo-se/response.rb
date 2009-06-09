@@ -20,6 +20,8 @@ module Yahoo
         unless errors
           if total_results_available == 1
             [Yahoo::SE::Result.new(self.to_json["ResultSet"]["Result"])]
+          elsif total_results_available == 0
+            []
           else
             self.to_json["ResultSet"]["Result"].map do |result_hash|
               Yahoo::SE::Result.new(result_hash)

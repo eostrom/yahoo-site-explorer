@@ -17,6 +17,16 @@ describe Yahoo::SE::Response do
     @response.total_results_available.should == 328
   end
   
+  describe "with no results" do
+    before do
+      @response = Yahoo::SE::Response.new(fixture("empty_results.json"))
+    end
+
+    it "should list 0 result objects" do
+      @response.results.size.should == 0
+    end
+  end
+
   describe "Errors" do
     it "should raise an exception if the response is a exceed error" do
       @response = Yahoo::SE::Response.new(fixture("exceed_error.json"))
