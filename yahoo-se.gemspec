@@ -1,11 +1,12 @@
 Gem::Specification.new do |s|
   s.name = "yahoo-se"
-  s.version = "1.2.0"
+  s.version = "1.2.1"
   s.date = "2009-06-09"
   s.summary = "Ruby gem for Yahoo! Site Explorer"
   s.email = "info@rubyskills.com"
   s.homepage = "http://www.rubyskills.com"
   s.authors = ["Lance Carlson", "Michael Erb", "Alex Pooley", "Erik Ostrom"]
+  s.add_dependency('json')
   s.files = [
     'LICENSE',
     'Rakefile',
